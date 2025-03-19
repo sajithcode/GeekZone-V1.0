@@ -8,35 +8,39 @@ function Footer() {
 
       {/* <!-- Main container div: holds the entire content of the footer, including four sections (TW Elements, Products, Useful links, and Contact), with responsive styling and appropriate padding/margins. --> */}
       <div className="mx-6 py-10 text-center md:text-left">
-        <div className="grid-1 grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+        <div className="grid-1 grid gap-8 md:grid-cols-2 lg:grid-cols-2">
+
+
           {/* <!-- TW Elements section --> */}
           <div className="">
-            <h6
-              className="mb-4 flex items-center justify-center font-semibold uppercase md:justify-start">
+            <h6 className="flex items-center justify-center font-semibold uppercase md:justify-start">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
                 fill="currentColor"
-                className="mr-3 h-4 w-4">
+                className="mr-3 h-25 w-60">
                 <path
                   d="M12.378 1.602a.75.75 0 00-.756 0L3 6.632l9 5.25 9-5.25-8.622-5.03zM21.75 7.93l-9 5.25v9l8.628-5.032a.75.75 0 00.372-.648V7.93zM11.25 22.18v-9l-9-5.25v8.57a.75.75 0 00.372.648l8.628 5.033z" />
               </svg>
-              TW Elements
+            </h6>
+          </div>
+
+          <div className="">
+            <h6
+              className="flex items-center justify-center font-semibold uppercase md:justify-start">
             </h6>
             <p>
-              Here you can use rows and columns to organize your footer
-              content. Lorem ipsum dolor sit amet, consectetur adipisicing
-              elit.
+            TechCamps are hands-on workshops connecting tech experts with journalists, NGOs, and civil society to tackle global challenges using innovative solutions. Participants collaborate with trainers to develop real-world strategies, with ongoing support to refine projects and stay engaged with peers and U.S. State Department staff.
             </p>
           </div>
         </div>
 
         {/* <!-- Social network icons container --> */}
-        <div className="flex justify-center">
+        <div className="flex justify-center mt-8">
           <a className="mr-6 text-neutral-600 dark:text-neutral-200">
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              className="h-4 w-4"
+              className="h-7 w-7"
               fill="currentColor"
               viewBox="0 0 24 24">
               <path
@@ -46,7 +50,7 @@ function Footer() {
           <a className="mr-6 text-neutral-600 dark:text-neutral-200">
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              className="h-4 w-4"
+              className="h-7 w-7"
               fill="currentColor"
               viewBox="0 0 24 24">
               <path
@@ -56,7 +60,7 @@ function Footer() {
           <a className="mr-6 text-neutral-600 dark:text-neutral-200">
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              className="h-4 w-4"
+              className="h-7 w-7"
               fill="currentColor"
               viewBox="0 0 24 24">
               <path
@@ -67,12 +71,9 @@ function Footer() {
       </div>
 
       {/* <!--Copyright section--> */}
-      <div className="bg-neutral-200 p-6 text-center dark:bg-neutral-700">
-        <span>2025 | All Rights Reserved</span>
-        <a
-          className="font-semibold text-neutral-600 dark:text-neutral-400"
-          href="https://tw-elements.com/"
-        >TW Elements</a>
+      <div className="bg-neutral-200 p-6 flex justify-between dark:bg-neutral-700">
+        <span>2025 | All Rights Reserved</span> 
+        <span>GeekZone 2025 | Sabaragamuwa University of Sri Lanka</span>
       </div>
     </footer>
     );
