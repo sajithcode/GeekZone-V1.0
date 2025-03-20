@@ -16,13 +16,16 @@ function Footer() {
                     <div>
                         <h6 className="flex items-center justify-center font-semibold uppercase md:justify-start"></h6>
                         <p>
-                            TechCamps are hands-on workshops connecting tech experts with journalists, NGOs, and civil society to tackle global challenges using innovative solutions. Participants collaborate with trainers to develop real-world strategies, with ongoing support to refine projects and stay engaged with peers and U.S. State Department staff.
+                            TechCamps are hands-on workshops connecting tech experts with journalists, NGOs, 
+                            and civil society to tackle global challenges using innovative solutions. 
+                            Participants collaborate with trainers to develop real-world strategies, 
+                            with ongoing support to refine projects and stay engaged with peers and U.S. State Department staff.
                         </p>
                     </div>
                 </div>
                 <div className="flex justify-center mt-8">
                     <button type="button"
-                        className="inline-block rounded px-6 py-2.5 text-xs font-medium uppercase leading-normal text-white shadow-md transition duration-150 ease-in-out hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg mr-5"
+                        className="inline-block rounded px-6 py-2.5 text-xs font-medium uppercase leading-normal text-white transition duration-150 ease-in-out focus:ring-0 active:shadow-lg mr-5"
                         >
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
@@ -37,7 +40,7 @@ function Footer() {
 
                     <button
                         type="button"
-                        className="inline-block rounded px-6 py-2.5 text-xs font-medium uppercase leading-normal text-white shadow-md transition duration-150 ease-in-out hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg mr-5"
+                        className="inline-block rounded px-6 py-2.5 text-xs font-medium uppercase leading-normal text-white transition duration-150 ease-in-out focus:ring-0 active:shadow-lg mr-5"
                         >
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
@@ -51,7 +54,7 @@ function Footer() {
 
 
                     <button type="button"
-                        className="inline-block rounded px-6 py-2.5 text-xs font-medium uppercase leading-normal text-white shadow-md transition duration-150 ease-in-out hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg "
+                        className="inline-block rounded px-6 py-2.5 text-xs font-medium uppercase leading-normal text-white transition duration-150 ease-in-out focus:ring-0 active:shadow-lg mr-5"
                         >
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
