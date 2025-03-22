@@ -1,0 +1,27 @@
+/* Floating image styling */
+.floating-image {
+  width: 15rem; /* Smaller size for mobile */
+  height: 15rem; /* Smaller size for mobile */
+  object-fit: contain;
+  border-radius: 0.5rem;
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Adjust for larger screens */
+@media (min-width: 768px) {
+  .floating-image {
+    align-items: center;
+    width: 25rem;
+    height: 25rem;
+  }
+}
+
+/* Floating animation */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
