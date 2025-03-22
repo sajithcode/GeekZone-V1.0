@@ -68,6 +68,7 @@ function HeroSection() {
  ml-2">26th March 2025</div>
           </div>
         </div>
+        <div></div>
       </section>
     </>
   );
