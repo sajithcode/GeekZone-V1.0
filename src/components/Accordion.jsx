@@ -14,9 +14,9 @@ const Accordion = ({ items }) => {
           <h2 id={`accordion-collapse-heading-${index}`}>
             <button
               type="button"
-              className={`flex items-center justify-between w-10/12 mx-auto p-5 font-medium rtl:text-right text-gray-500 border ${
+              className={`flex items-center justify-between w-10/12 mx-auto p-5 font-medium rtl:text-right text-green-500 border ${
                 index === 0 ? 'rounded-t-xl' : 'border-t-0'
-              } rounded-t-xl rounded-b-xl focus:ring-4 focus:ring-[#] dark:focus:ring-gray-800 dark:border-gray-700 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-800 gap-3`}
+              } rounded-t-xl rounded-b-xl focus:ring-4 focus:ring-[#] dark:focus:ring-green-800 dark:border-green-700 dark:text-gray-400 hover:bg-green-100 dark:hover:bg-green-900 gap-3`}
               data-accordion-target={`#accordion-collapse-body-${index}`}
               aria-expanded={openIndex === index}
               aria-controls={`accordion-collapse-body-${index}`}
