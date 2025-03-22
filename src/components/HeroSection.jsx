@@ -28,7 +28,7 @@ function HeroSection() {
               2025
             </button>
 
-            <h1 className="font-primary max-w-2xl mb-4 text-4xl font-extrabold leading-none md:text-5xl xl:text-6xl dark:text-white tracking-wide mt-2 lg:mt-6">
+            <h1 className="font-primary  max-w-2xl mb-4 text-white text-4xl font-extrabold leading-none md:text-5xl xl:text-6xl dark:text-white tracking-wide mt-2 lg:mt-6">
               GeekZone <span>V1.0</span>
             </h1>
             <h3 className="text-white mb-3">
