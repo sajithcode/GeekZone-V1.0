@@ -1,7 +1,7 @@
 /* @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap'); */
 
 .topic{
-  font-family: "ProximaNovaA-Black";
+  /* font-family: "ProximaNovaA-Black"; */
   /* font-size: 60px; */
   color: white;
 }
@@ -21,7 +21,7 @@
 }
 
 .content{
-  font-family: "Frutiger";
+  /* font-family: "Frutiger"; */
   font-size: 18px;
   color: #9E9E9E;
 }
@@ -34,6 +34,7 @@
 
 .whatIsGeekZone{
   background-color: #0b160d;
-  background-image: url("/public/Images/background.png");
+  background-image: url("/Images/background.png");
+  background-attachment: fixed;
 }
 
