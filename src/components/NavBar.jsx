@@ -7,11 +7,11 @@ function NavBar() {
 
   return (
     <nav className="bg-neutral-900 border-gray-200">
-      <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+      <div className="max-w-full flex flex-wrap items-center justify-between mx-auto px-10">
       <Link to="/" className="flex items-center space-x-3 rtl:space-x-reverse">
   <img 
-    src="src/assets/logos/GZ-logo-2.png" 
-    className="h-12 w-auto scale-150 object-contain" 
+    src="/Images/GZ-logo-1.png" 
+    className="h-20 scale-150 object-contain" 
     alt="Logo" 
   />
 </Link>
