@@ -33,20 +33,17 @@ const Timer = () => {
   }, []);
 
   return (
-    <div className="flex justify-left items-center mt-3">
-      <div
-        className="rounded-lg relative overflow-hidden"
-        
-      >
+    <div className="flex justify-center items-center mt-3 px-4">
+      <div className="rounded-lg relative overflow-hidden">
         {/* Green border line */}
         <div
-          className="absolute inset-0   shadow-lg"
+          className="absolute inset-0 shadow-lg rounded-lg"
           style={{
             boxShadow: '0 0 10px 2px rgba(0, 255, 0, 0.5)',
           }}
         ></div>
   
-        <div className="flex space-x-4 z-10 relative">
+        <div className="flex flex-nowrap justify-center gap-2 sm:gap-4 z-10 relative p-4">
           {[
             { label: 'Days', value: time.days },
             { label: 'Hours', value: time.hours },
@@ -55,12 +52,14 @@ const Timer = () => {
           ].map((unit, index) => (
             <div
               key={index}
-              className="flex flex-col items-center justify-center bg-[#2B2B2B] p-4 rounded-lg shadow-md w-20"
+              className="flex flex-col items-center justify-center bg-[#2B2B2B] p-3 sm:p-4 rounded-lg shadow-md w-16 sm:w-20"
             >
-              <span className="text-3xl md:text-4xl font-bold text-green-400">
+              <span className="text-xl sm:text-2xl md:text-3xl font-bold text-green-400">
                 {String(unit.value).padStart(2, '0')}
               </span>
-              <span className="text-sm text-white mt-2">{unit.label}</span>
+              <span className="text-xs sm:text-sm text-white mt-1 sm:mt-2">
+                {unit.label}
+              </span>
             </div>
           ))}
         </div>
