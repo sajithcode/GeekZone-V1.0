@@ -9,7 +9,7 @@ const Timer = () => {
   });
 
   const calculateTime = () => {
-    const eventDate = new Date('2025-03-26T18:00:00'); // Event date: March 26, 2025
+    const eventDate = new Date('2025-04-26T18:00:00'); // Event date: March 26, 2025
     const now = new Date();
 
     const diff = eventDate - now; // Difference in milliseconds
