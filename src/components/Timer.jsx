@@ -33,40 +33,41 @@ const Timer = () => {
   }, []);
 
   return (
-    <div className="flex justify-left items-center">
+  <div className="flex justify-left items-center">
+    <div
+      className="p-8 rounded-lg relative overflow-hidden"
+      style={{ backgroundColor: '#1F1F1F' }}
+    >
+      {/* Green border line */}
       <div
-        className="p-8 rounded-lg relative overflow-hidden"
-        style={{ backgroundColor: '#1F1F1F' }}
-      >
-        {/* Green border line */}
-        <div
-          className="absolute inset-0 border-2 border-green-500 rounded-lg shadow-lg"
-          style={{
-            boxShadow: '0 0 10px 2px rgba(0, 255, 0, 0.5)',
-          }}
-        ></div>
-        
-        <div className="flex space-x-4">
-          <div className="text-center">
-            <span className="text-4xl font-bold text-[#FFFFFF]">{time.days}</span>
-            <span className="block text-sm text-[#FFFFFF]">Days</span>
+        className="absolute inset-0 border-2 border-green-500 rounded-lg shadow-lg"
+        style={{
+          boxShadow: '0 0 10px 2px rgba(0, 255, 0, 0.5)',
+        }}
+      ></div>
+
+      <div className="flex space-x-4 z-10 relative">
+        {[
+          { label: 'Days', value: time.days },
+          { label: 'Hours', value: time.hours },
+          { label: 'Minutes', value: time.minutes },
+          { label: 'Seconds', value: time.seconds },
+        ].map((unit, index) => (
+          <div
+            key={index}
+            className="flex flex-col items-center justify-center bg-[#2B2B2B] p-4 rounded-lg shadow-md w-20"
+          >
+            <span className="text-3xl md:text-4xl font-bold text-green-400">
+              {String(unit.value).padStart(2, '0')}
+            </span>
+            <span className="text-sm text-white mt-2">{unit.label}</span>
           </div>
-          <div className="text-center">
-            <span className="text-4xl font-bold text-[#FFFFFF]">{time.hours}</span>
-            <span className="block text-sm text-[#FFFFFF]">Hours</span>
-          </div>
-          <div className="text-center">
-            <span className="text-4xl font-bold text-[#FFFFFF]">{time.minutes}</span>
-            <span className="block text-sm text-[#FFFFFF]">Minutes</span>
-          </div>
-          <div className="text-center">
-            <span className="text-4xl font-bold text-[#FFFFFF]">{time.seconds}</span>
-            <span className="block text-sm text-[#FFFFFF]">Seconds</span>
-          </div>
-        </div>
+        ))}
       </div>
     </div>
-  );
+  </div>
+);
+
 };
 
 export default Timer;
