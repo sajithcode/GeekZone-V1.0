@@ -1,79 +1,35 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import "./content.css";
-import {
-  useScrollAnimation,
-  fadeInLeft,
-  fadeInRight,
-} from "../hooks/useScrollAnimation";
 
 function Content() {
-  const [leftSectionRef, leftVisible] = useScrollAnimation({ threshold: 0.3 });
-  const [rightSectionRef, rightVisible] = useScrollAnimation({
-    threshold: 0.3,
-  });
-  const [scrollY, setScrollY] = useState(0);
-
-  useEffect(() => {
-    const handleScroll = () => setScrollY(window.scrollY);
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
   return (
     <>
-      {/* Container for whatIsGeekZone */}
-      <div className="whatIsGeekZone relative">
-        <div
-          className="absolute inset-0 bg-black/20"
-          style={{
-            transform: `translateY(${scrollY * 0.3}px)`,
-          }}
-        ></div>
-        <div className="relative z-10 px-4 py-8 mx-auto max-w-7xl font-primary">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-            {/* Left Section */}
-            <div
-              ref={leftSectionRef}
-              className={`leftSection flex flex-col space-y-6 text-center md:text-left ${
-                fadeInLeft.initial
-              } ${leftVisible ? fadeInLeft.animate : ""} ${
-                fadeInLeft.transition
-              }`}
-            >
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white">
-                What is <br />
-                <span className="text-[#4FB777]">GeekZone?</span>
-              </h2>{" "}
-              <p className="text-base md:text-lg text-gray-300 leading-relaxed text-justify">
-                GeekZone V1.0 is a premier technology workshop designed to
-                empower innovators and tech enthusiasts with hands-on experience
-                in cutting-edge digital technologies. Organized by the IEEE
-                Student Branch of Sabaragamuwa University of Sri Lanka, this
-                event features interactive sessions and live demonstrations,
-                providing attendees with valuable insights, practical skills,
-                and networking opportunities. GeekZone V1.0 aims to foster
-                innovation and drive technological advancement, equipping
-                participants with the knowledge and expertise to excel in the
-                ever-evolving tech landscape.
-              </p>
-            </div>
+      <div className="whatIsGeekZone grid bg-end bg-no-repeat bg-cover xl:bg-center md:flex ">
+        {/* Left Section */}
+        <div className=" leftSection bg-transparent flex flex-col mt-6 mb-6 md:w-3/5 xl:w-3/5 relative space-y-4 order-1 md:order-none lg:mb-8 lg:mt-8">
+          {" "}
+          <h2 className="font-primary font-bold text-white text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl xl:mt-6 self-center xl:self-start md:pl-10 xl:pl-20">
+            What is <br /> <span className="text-[#4FB777]">GeekZone?</span>
+          </h2>
+          <p className="font-primary text-gray-300 text-sm sm:text-base lg:text-lg xl:text-xl text-center md:text-left px-10 md:pl-10 md:pr-0 xl:pl-20 leading-relaxed">
+            GeekZone V1.0 is a premier technology workshop designed to empower
+            innovators and tech enthusiasts with hands-on experience in
+            cutting-edge digital technologies. Organized by the IEEE Student
+            Branch of Sabaragamuwa University of Sri Lanka, this event features
+            interactive sessions and live demonstrations, providing attendees
+            with valuable insights, practical skills, and networking
+            opportunities. GeekZone V1.0 aims to foster innovation and drive
+            technological advancement, equipping participants with the knowledge
+            and expertise to excel in the ever-evolving tech landscape.
+          </p>
+        </div>
 
-            {/* Right Section */}
-            <div
-              ref={rightSectionRef}
-              className={`rightSection flex justify-center md:justify-end ${
-                fadeInRight.initial
-              } ${rightVisible ? fadeInRight.animate : ""} ${
-                fadeInRight.transition
-              } delay-200`}
-            >
-              <img
-                src="/Images/Robo.png"
-                className="w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 object-contain"
-                alt="GeekZone Robot"
-              />
-            </div>
-          </div>
+        {/* Right Section */}
+        <div className="rightSection bg-transparent w-full mt-6 mb-6 md:w-2/5 xl:w-2/5 hidden md:flex justify-center  md:items-center lg:items-end lg:mb-8 lg:mt-8">
+          <img
+            src="/Images/Robo.png"
+            className="sectionImage md:h-70 lg:h-80 xl:h-100 "
+          />
         </div>
       </div>
     </>

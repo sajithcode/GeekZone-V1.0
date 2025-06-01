@@ -13,7 +13,7 @@ function Home() {
   return (
     <>
       <ScrollProgress />
-      <div>
+      
         <NavBar />
         <section id="home" className="pt-20">
           <HeroSection />
@@ -24,13 +24,13 @@ function Home() {
           <TimeLine />
         </section>
         <section id="events">
-          <Event />
+          {/* <Event /> */}
         </section>
         <section id="faq">
           <ContactUs />
         </section>
         <Footer />
-      </div>
+      
     </>
   );
 }
