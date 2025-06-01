@@ -1,9 +1,19 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./navbar.css";
 import { Link } from "react-router-dom";
 
 function NavBar() {
   const [isOpen, setIsOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const handleSmoothScroll = (targetId) => {
     const element = document.getElementById(targetId);
@@ -18,7 +28,13 @@ function NavBar() {
   };
 
   return (
-    <nav className="bg-neutral-900 border-gray-200">
+    <nav
+      className={`fixed top-0 w-full z-40 transition-all duration-300 ${
+        isScrolled
+          ? "bg-neutral-900/95 backdrop-blur-md shadow-lg"
+          : "bg-neutral-900"
+      } border-gray-200`}
+    >
       <div className="max-w-full flex flex-wrap items-center justify-between mx-auto px-10">
         <Link
           to="/"
