@@ -1,40 +1,24 @@
-/* @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap'); */
-
-.topic{
-  /* font-family: "ProximaNovaA-Black"; */
-  /* font-size: 60px; */
-  color: white;
-}
-
-.topic::selection {
-  background-color: #5c848c; 
-  color: white;
-}
-
-.topicHighlighted{
-  color: #4fb777;
-}
-
-.topicHighlighted::selection {
-  background-color: #5c848c; 
-  color: #4fb777;
-}
-
-.content{
-  /* font-family: "Frutiger"; */
-  font-size: 18px;
-  color: #9E9E9E;
-}
-
-.content::selection {
-  background-color: #5c848c; 
-  color: white;
-}
-
-
-.whatIsGeekZone{
+/* Content section styling */
+.whatIsGeekZone {
   background-color: #0b160d;
   background-image: url("/Images/background.png");
   background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
 }
 
+/* Selection styling for consistency */
+.whatIsGeekZone h2::selection,
+.whatIsGeekZone p::selection {
+  background-color: #5c848c;
+  color: white;
+}
+
+.whatIsGeekZone .text-\[#4FB777\]::selection {
+  background-color: #5c848c;
+  color: #4fb777;
+}
