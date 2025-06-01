@@ -1,6 +1,11 @@
 import React from "react";
 import "./contactUs.css";
 import Accordion from "./Accordion";
+import {
+  useScrollAnimation,
+  fadeInUp,
+  fadeInLeft,
+} from "../hooks/useScrollAnimation";
 
 const items = [
   {
@@ -80,12 +85,19 @@ const items = [
 ];
 
 function ContactUs() {
+  const [headerRef, headerVisible] = useScrollAnimation({ threshold: 0.2 });
+  const [contentRef, contentVisible] = useScrollAnimation({ threshold: 0.1 });
+
   return (
     <section className="relative overflow-hidden bg-[#1E1E1E] py-16">
       {/* Header Section */}
       <div className="px-4 py-8 mx-auto max-w-7xl font-primary">
-        {" "}
-        <div className="text-center mb-12">
+        <div
+          ref={headerRef}
+          className={`text-center mb-12 ${fadeInUp.initial} ${
+            headerVisible ? fadeInUp.animate : ""
+          } ${fadeInUp.transition}`}
+        >
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
             <span className="text-white">Frequently Asked </span>
             <span className="text-[#4FB777]">Questions</span>
@@ -95,7 +107,12 @@ function ContactUs() {
           </p>
         </div>
         {/* FAQ Content */}
-        <div className="max-w-4xl mx-auto">
+        <div
+          ref={contentRef}
+          className={`max-w-4xl mx-auto ${fadeInUp.initial} ${
+            contentVisible ? fadeInUp.animate : ""
+          } ${fadeInUp.transition} delay-300`}
+        >
           <Accordion items={items} />
         </div>
       </div>

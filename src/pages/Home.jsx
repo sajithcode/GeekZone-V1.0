@@ -7,13 +7,15 @@ import TimeLine from "../components/TimeLine";
 import Event from "../components/Event";
 import ContactUs from "../components/ContactUs";
 import Footer from "../components/Footer";
+import ScrollProgress from "../components/ScrollProgress";
 
 function Home() {
   return (
     <>
+      <ScrollProgress />
       <div>
         <NavBar />
-        <section id="home">
+        <section id="home" className="pt-20">
           <HeroSection />
           <Announce />
         </section>

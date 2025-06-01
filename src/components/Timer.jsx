@@ -8,6 +8,8 @@ const Timer = () => {
     seconds: 0,
   });
 
+  const [isVisible, setIsVisible] = useState(false);
+
   const calculateTime = () => {
     const eventDate = new Date("2025-06-02T18:00:00"); // Event date: March 26, 2025
     const now = new Date();
@@ -31,6 +33,8 @@ const Timer = () => {
 
   useEffect(() => {
     const interval = setInterval(calculateTime, 1000);
+    // Trigger animation after component mounts
+    setTimeout(() => setIsVisible(true), 100);
     return () => clearInterval(interval);
   }, []);
   return (
@@ -46,7 +50,15 @@ const Timer = () => {
           ].map((unit, index) => (
             <div
               key={index}
-              className="group relative flex flex-col items-center justify-center bg-gradient-to-b from-gray-800 to-gray-900 p-3 sm:p-4 md:p-5 rounded-xl shadow-lg border border-gray-600 min-w-0 hover:scale-105 transition-all duration-300 hover:shadow-xl hover:border-[#4FB777]"
+              className={`group relative flex flex-col items-center justify-center bg-gradient-to-b from-gray-800 to-gray-900 p-3 sm:p-4 md:p-5 rounded-xl shadow-lg border border-gray-600 min-w-0 hover:scale-105 transition-all duration-300 hover:shadow-xl hover:border-[#4FB777] ${
+                isVisible
+                  ? "opacity-100 translate-y-0"
+                  : "opacity-0 translate-y-4"
+              }`}
+              style={{
+                transitionDelay: `${index * 150}ms`,
+                transitionDuration: "700ms",
+              }}
             >
               {/* Glowing effect on hover */}
               <div className="absolute inset-0 rounded-xl bg-gradient-to-b from-[#4FB777]/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
@@ -71,7 +83,12 @@ const Timer = () => {
         </div>
 
         {/* Modern accent line */}
-        <div className="mt-6 h-1 bg-gradient-to-r from-transparent via-[#4FB777] to-transparent rounded-full opacity-50"></div>
+        <div
+          className={`mt-6 h-1 bg-gradient-to-r from-transparent via-[#4FB777] to-transparent rounded-full transition-all duration-1000 ${
+            isVisible ? "opacity-50 scale-x-100" : "opacity-0 scale-x-0"
+          }`}
+          style={{ transitionDelay: "800ms" }}
+        ></div>
       </div>
     </div>
   );
