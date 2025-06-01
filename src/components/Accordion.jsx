@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
 const Accordion = ({ items }) => {
   const [openIndex, setOpenIndex] = useState(null);
@@ -6,50 +6,56 @@ const Accordion = ({ items }) => {
   const toggleAccordion = (index) => {
     setOpenIndex(openIndex === index ? null : index);
   };
-
   return (
-    <div id="accordion-collapse" data-accordion="collapse" className="w-full">
+    <div className="space-y-4">
       {items.map((item, index) => (
-        <div key={index}>
-          <h2 id={`accordion-collapse-heading-${index}`}>
+        <div
+          key={index}
+          className="bg-gradient-to-r from-gray-800 to-gray-900 rounded-xl border border-gray-700 shadow-lg hover:shadow-xl transition-all duration-300"
+        >
+          <h2>
             <button
               type="button"
-              className={`flex items-center justify-between w-10/12 mx-auto p-5 font-medium rtl:text-right text-green-500 border ${
-                index === 0 ? 'rounded-t-xl' : 'border-t-0'
-              } rounded-t-xl rounded-b-xl focus:ring-4 focus:ring-[#] dark:focus:ring-green-800 dark:border-green-700 dark:text-gray-400 hover:bg-green-100 dark:hover:bg-green-900 gap-3`}
-              data-accordion-target={`#accordion-collapse-body-${index}`}
-              aria-expanded={openIndex === index}
-              aria-controls={`accordion-collapse-body-${index}`}
+              className={`flex items-center justify-between w-full p-6 font-medium text-left text-white hover:text-[#4FB777] focus:outline-none focus:ring-2 focus:ring-[#4FB777]/30 rounded-xl transition-all duration-300 group`}
               onClick={() => toggleAccordion(index)}
+              aria-expanded={openIndex === index}
             >
-              <span className="text-base sm:text-lg md:text-xl">{item.title}</span>
+              <span className="text-lg md:text-xl font-semibold">
+                {item.title}
+              </span>
               <svg
-                data-accordion-icon
-                className={`w-3 h-3 sm:w-4 sm:h-4 shrink-0 ${openIndex === index ? 'rotate-180' : ''}`}
-                aria-hidden="true"
-                xmlns="http://www.w3.org/2000/svg"
+                className={`w-5 h-5 shrink-0 transition-transform duration-300 ${
+                  openIndex === index
+                    ? "rotate-180 text-[#4FB777]"
+                    : "text-gray-400 group-hover:text-[#4FB777]"
+                }`}
                 fill="none"
-                viewBox="0 0 10 6"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
               >
                 <path
-                  stroke="currentColor"
                   strokeLinecap="round"
                   strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M9 5 5 1 1 5"
+                  strokeWidth={2}
+                  d="M19 9l-7 7-7-7"
                 />
               </svg>
             </button>
           </h2>
           <div
-            id={`accordion-collapse-body-${index}`}
-            className={`${openIndex === index ? '' : 'hidden'} w-10/12 mx-auto p-5 dark:border-gray-700 dark:bg-[#1E1E1E]`}
-            aria-labelledby={`accordion-collapse-heading-${index}`}
+            className={`overflow-hidden transition-all duration-300 ${
+              openIndex === index
+                ? "max-h-screen opacity-100"
+                : "max-h-0 opacity-0"
+            }`}
           >
-            <div className="p-5 border border-none dark:border-gray-700">
-              <p className="text-sm sm:text-base md:text-lg text-gray-500 dark:text-gray-400">
-                {item.content}
-              </p>
+            <div className="px-6 pb-6">
+              <div className="pt-2 border-t border-gray-700/50">
+                <div className="mt-4 text-gray-300 leading-relaxed">
+                  {item.content}
+                </div>
+              </div>
             </div>
           </div>
         </div>

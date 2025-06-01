@@ -1,82 +1,106 @@
-import React from 'react'
-import './contactUs.css'
+import React from "react";
+import "./contactUs.css";
 import Accordion from "./Accordion";
 
 const items = [
   {
-    title: 'What is Flowbite?',
+    title: "What is GeekZone V1.0?",
     content: (
       <>
         <p className="mb-2 text-gray-500 dark:text-gray-400">
-          Flowbite is an open-source library of interactive components built on top of Tailwind CSS including buttons, dropdowns, modals, navbars, and more.
+          GeekZone V1.0 is a premier technology workshop designed to empower
+          innovators and tech enthusiasts with hands-on experience in
+          cutting-edge digital technologies. Organized by the IEEE Student
+          Branch of Sabaragamuwa University of Sri Lanka.
         </p>
         <p className="text-gray-500 dark:text-gray-400">
-          Check out this guide to learn how to <a href="/docs/getting-started/introduction/" className="text-blue-600 dark:text-blue-500 hover:underline">get started</a> and start developing websites even faster with components on top of Tailwind CSS.
+          This event features interactive sessions and live demonstrations,
+          providing attendees with valuable insights, practical skills, and
+          networking opportunities in the ever-evolving tech landscape.
         </p>
       </>
     ),
   },
   {
-    title: 'Is there a Figma file available?',
+    title: "When and where is GeekZone V1.0?",
     content: (
       <>
         <p className="mb-2 text-gray-500 dark:text-gray-400">
-          Flowbite is first conceptualized and designed using the Figma software so everything you see in the library has a design equivalent in our Figma file.
+          GeekZone V1.0 will be held on March 26th, 2025, at the Main Auditorium
+          of Sabaragamuwa University of Sri Lanka.
         </p>
         <p className="text-gray-500 dark:text-gray-400">
-          Check out the <a href="https://flowbite.com/figma/" className="text-blue-600 dark:text-blue-500 hover:underline">Figma design system</a> based on the utility classes from Tailwind CSS and components from Flowbite.
+          The event starts at 6:00 PM and will feature multiple sessions
+          throughout the evening. Make sure to arrive early to secure your spot!
         </p>
       </>
     ),
   },
   {
-    title: 'What are the differences between Flowbite and Tailwind UI?',
+    title: "Who can attend GeekZone V1.0?",
     content: (
       <>
         <p className="mb-2 text-gray-500 dark:text-gray-400">
-          The main difference is that the core components from Flowbite are open source under the MIT license, whereas Tailwind UI is a paid product. Another difference is that Flowbite relies on smaller and standalone components, whereas Tailwind UI offers sections of pages.
+          GeekZone V1.0 is open to all technology enthusiasts, students,
+          professionals, and anyone interested in learning about cutting-edge
+          digital technologies and innovations.
         </p>
         <p className="mb-2 text-gray-500 dark:text-gray-400">
-          However, we actually recommend using both Flowbite, Flowbite Pro, and even Tailwind UI as there is no technical reason stopping you from using the best of two worlds.
+          Whether you're a beginner or an experienced developer, this event
+          offers something valuable for everyone looking to expand their tech
+          knowledge and network.
         </p>
-        <p className="mb-2 text-gray-500 dark:text-gray-400">Learn more about these technologies:</p>
+        <p className="text-gray-500 dark:text-gray-400">Perfect for:</p>
         <ul className="ps-5 text-gray-500 list-disc dark:text-gray-400">
-          <li><a href="https://flowbite.com/pro/" className="text-blue-600 dark:text-blue-500 hover:underline">Flowbite Pro</a></li>
-          <li><a href="https://tailwindui.com/" rel="nofollow" className="text-blue-600 dark:text-blue-500 hover:underline">Tailwind UI</a></li>
+          <li>University students interested in technology</li>
+          <li>Software developers and engineers</li>
+          <li>Tech entrepreneurs and innovators</li>
+          <li>Anyone curious about the latest tech trends</li>
         </ul>
+      </>
+    ),
+  },
+  {
+    title: "What will I learn at GeekZone V1.0?",
+    content: (
+      <>
+        <p className="mb-2 text-gray-500 dark:text-gray-400">
+          GeekZone V1.0 features interactive workshops and demonstrations
+          covering various cutting-edge technologies including AI, machine
+          learning, web development, mobile app development, and emerging tech
+          trends.
+        </p>
+        <p className="text-gray-500 dark:text-gray-400">
+          You'll gain hands-on experience, practical skills, and insights from
+          industry experts that will help you excel in the technology field.
+        </p>
       </>
     ),
   },
 ];
 
-
 function ContactUs() {
   return (
-  <section class="relative overflow-hidden bg-[#1E1E1E] py-20 lg:py-[20px]">
-
-    <h2 class="mb-6 text-[32px] font-bold uppercase text-dark sm:text-[40px] lg:text-[36px] xl:text-[40px] dark:text-white text-center">
-      FAQ<span class="text-[#4FB777]">s</span>
-    </h2>
-
-    <div class="container mx-auto">
-      
-      <div class="flex flex-wrap lg:justify-between">
-
-        {/* <div class="w-full px-4 lg:w-1/2 xl:w-6/12 flex items-center justify-center">
-          <h6 class="hidden sm:flex items-center justify-center font-semibold uppercase md:justify-center">
-            <img src="/contactus.png" alt="Icon" className="mr-3 h-[400px] w-[400px]" />
-          </h6>
-        </div> */}  
-
-      <div className="p-10 w-full">
-        <Accordion items={items} />
-      </div>
-
-
+    <section className="relative overflow-hidden bg-[#1E1E1E] py-16">
+      {/* Header Section */}
+      <div className="px-4 py-8 mx-auto max-w-7xl font-primary">
+        {" "}
+        <div className="text-center mb-12">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
+            <span className="text-white">Frequently Asked </span>
+            <span className="text-[#4FB777]">Questions</span>
+          </h2>
+          <p className="text-gray-400 text-lg max-w-2xl mx-auto">
+            Find answers to common questions about GeekZone V1.0
+          </p>
         </div>
-    </div>
-  </section>
-  )
+        {/* FAQ Content */}
+        <div className="max-w-4xl mx-auto">
+          <Accordion items={items} />
+        </div>
+      </div>
+    </section>
+  );
 }
 
-export default ContactUs
+export default ContactUs;
