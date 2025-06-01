@@ -16,7 +16,9 @@ const AccordionItem = ({ item, index, isOpen, onToggle }) => {
           onClick={() => onToggle(index)}
           aria-expanded={isOpen}
         >
-          <span className="text-lg md:text-xl font-semibold">{item.title}</span>
+          <span className="text-base sm:text-lg md:text-xl font-semibold">
+            {item.title}
+          </span>
           <svg
             className={`w-5 h-5 shrink-0 transition-transform duration-300 ${
               isOpen
