@@ -35,7 +35,7 @@ function NavBar() {
           : "bg-neutral-900"
       } border-gray-200`}
     >
-      <div className="max-w-full flex flex-wrap items-center justify-between mx-auto px-10">
+      <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto px-10">
         <Link
           to="/"
           className="flex items-center space-x-3 rtl:space-x-reverse"
