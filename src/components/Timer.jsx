@@ -41,12 +41,19 @@ const Timer = () => {
     <div className="flex flex-col items-start mt-8">
       {" "}
       <div className="bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 rounded-2xl p-6 shadow-2xl border border-gray-700">
+        {" "}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
           {[
-            { label: "Days", value: time.days },
-            { label: "Hours", value: time.hours },
-            { label: "Minutes", value: time.minutes },
-            { label: "Seconds", value: time.seconds },
+            { label: time.days === 1 ? "Day" : "Days", value: time.days },
+            { label: time.hours === 1 ? "Hour" : "Hours", value: time.hours },
+            {
+              label: time.minutes === 1 ? "Minute" : "Minutes",
+              value: time.minutes,
+            },
+            {
+              label: time.seconds === 1 ? "Second" : "Seconds",
+              value: time.seconds,
+            },
           ].map((unit, index) => (
             <div
               key={index}
@@ -81,7 +88,6 @@ const Timer = () => {
             </div>
           ))}
         </div>
-
         {/* Modern accent line */}
         <div
           className={`mt-6 h-1 bg-gradient-to-r from-transparent via-[#4FB777] to-transparent rounded-full transition-all duration-1000 ${
