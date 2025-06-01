@@ -91,13 +91,21 @@ function NavBar() {
               >
                 Intro
               </button>
-            </li>
+            </li>{" "}
             <li>
               <button
                 onClick={() => handleSmoothScroll("events")}
                 className="block py-2 px-3 text-white rounded-sm hover:bg-gray-700 md:hover:bg-transparent md:border-0 md:hover:text-[#4FB777] md:p-0 w-full text-left cursor-pointer"
               >
                 Events
+              </button>
+            </li>
+            <li>
+              <button
+                onClick={() => handleSmoothScroll("event-photos")}
+                className="block py-2 px-3 text-white rounded-sm hover:bg-gray-700 md:hover:bg-transparent md:border-0 md:hover:text-[#4FB777] md:p-0 w-full text-left cursor-pointer"
+              >
+                Gallery
               </button>
             </li>
             <li>
