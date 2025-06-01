@@ -22,10 +22,11 @@ function HeroSection() {
           backgroundAttachment: "fixed",
         }}
       >
+        {" "}
         {/* Hero Content */}
-        <div className="hero-content grid max-w-screen-xl px-4 py-8 mx-auto lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-12 mb-5">
+        <div className="hero-content grid max-w-screen-xl px-4 py-8 mx-auto gap-8 xl:gap-12 lg:py-16 lg:grid-cols-12 mb-5">
           <div
-            className={`ml-auto mr-auto mt-5 place-self-center lg:col-span-7 text-center md:text-left transition-all duration-1000 ease-out ${
+            className={`ml-auto mr-auto mt-5 place-self-center lg:col-span-7 text-center lg:text-left transition-all duration-1000 ease-out ${
               isLoaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
             }`}
           >
@@ -89,37 +90,43 @@ function HeroSection() {
               alt="mockup"
             />
           </div>
-        </div>
-
+        </div>{" "}
         {/* Bottom Section */}
-        <div className="flex flex-col md:flex-row items-center justify-between p-4 md:px-[70px] text-white bg-[#1E1E1E]">
-          <div className="text-2xl font-bold mb-4 md:mb-0">GeekZone V1.0</div>
-          <div className="text-center mb-4 md:mb-0">
-            <span>Organized by</span>
+        <div className="flex flex-col lg:flex-row items-center justify-between gap-4 lg:gap-8 p-4 sm:p-6 md:px-8 lg:px-16 xl:px-20 text-white bg-[#1E1E1E]">
+          <div className="text-xl sm:text-2xl font-bold text-center lg:text-left">
+            GeekZone V1.0
+          </div>
+          <div className="text-center">
+            <span className="text-sm sm:text-base">Organized by</span>
             <br />
-            <span
-              className="text-2xl font-semibold
-"
-            >
+            <span className="text-lg sm:text-xl lg:text-2xl font-semibold">
               IEEE SUSL
             </span>
           </div>
-          <div className="flex items-center mb-4 md:mb-0">
-            <img width={50} src="/maps-and-flags.png" alt="venue" />
-            <div
-              className="text-xl font-medium
- ml-2"
-            >
-              Main Auditorium
+          <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6">
+            <div className="flex items-center">
+              <img
+                width={40}
+                height={40}
+                src="/maps-and-flags.png"
+                alt="venue"
+                className="w-8 h-8 sm:w-10 sm:h-10"
+              />
+              <div className="text-base sm:text-lg lg:text-xl font-medium ml-2">
+                Main Auditorium
+              </div>
             </div>
-          </div>
-          <div className="flex items-center">
-            <img width={50} src="/calendar.png" alt="date" />
-            <div
-              className="text-xl font-medium
- ml-2"
-            >
-              26th March 2025
+            <div className="flex items-center">
+              <img
+                width={40}
+                height={40}
+                src="/calendar.png"
+                alt="date"
+                className="w-8 h-8 sm:w-10 sm:h-10"
+              />
+              <div className="text-base sm:text-lg lg:text-xl font-medium ml-2">
+                26th March 2025
+              </div>
             </div>
           </div>
         </div>
