@@ -14,7 +14,7 @@ function Footer() {
             />
           </div>
           <div className="flex-1 max-w-2xl text-center md:text-left">
-            <p className="text-gray-300 leading-relaxed text-base">
+            <p className="text-gray-300 leading-relaxed text-sm sm:text-base lg:text-lg">
               TechCamps are hands-on workshops connecting tech experts with
               journalists, NGOs, and civil society to tackle global challenges
               using innovative solutions. Participants collaborate with trainers
