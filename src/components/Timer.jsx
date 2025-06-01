@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from "react";
 
 const Timer = () => {
   const [time, setTime] = useState({
@@ -9,14 +9,16 @@ const Timer = () => {
   });
 
   const calculateTime = () => {
-    const eventDate = new Date('2025-04-26T18:00:00'); // Event date: March 26, 2025
+    const eventDate = new Date("2025-06-02T18:00:00"); // Event date: March 26, 2025
     const now = new Date();
 
     const diff = eventDate - now; // Difference in milliseconds
 
     if (diff > 0) {
       const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const hours = Math.floor(
+        (diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+      );
       const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
       const seconds = Math.floor((diff % (1000 * 60)) / 1000);
 
@@ -31,42 +33,48 @@ const Timer = () => {
     const interval = setInterval(calculateTime, 1000);
     return () => clearInterval(interval);
   }, []);
-
   return (
-    <div className="flex justify-center items-center mt-3 px-4">
-      <div className="rounded-lg relative overflow-hidden">
-        {/* Green border line */}
-        <div
-          className="absolute inset-0 shadow-lg rounded-lg"
-          style={{
-            boxShadow: '0 0 10px 2px rgba(0, 255, 0, 0.5)',
-          }}
-        ></div>
-  
-        <div className="flex flex-nowrap justify-center gap-2 sm:gap-4 z-10 relative p-4">
+    <div className="flex flex-col items-start mt-8">
+      {" "}
+      <div className="bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 rounded-2xl p-6 shadow-2xl border border-gray-700">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
           {[
-            { label: 'Days', value: time.days },
-            { label: 'Hours', value: time.hours },
-            { label: 'Minutes', value: time.minutes },
-            { label: 'Seconds', value: time.seconds },
+            { label: "Days", value: time.days },
+            { label: "Hours", value: time.hours },
+            { label: "Minutes", value: time.minutes },
+            { label: "Seconds", value: time.seconds },
           ].map((unit, index) => (
             <div
               key={index}
-              className="flex flex-col items-center justify-center bg-[#2B2B2B] p-3 sm:p-4 rounded-lg shadow-md w-16 sm:w-20"
+              className="group relative flex flex-col items-center justify-center bg-gradient-to-b from-gray-800 to-gray-900 p-3 sm:p-4 md:p-5 rounded-xl shadow-lg border border-gray-600 min-w-0 hover:scale-105 transition-all duration-300 hover:shadow-xl hover:border-[#4FB777]"
             >
-              <span className="text-xl sm:text-2xl md:text-3xl font-bold text-green-400">
-                {String(unit.value).padStart(2, '0')}
+              {/* Glowing effect on hover */}
+              <div className="absolute inset-0 rounded-xl bg-gradient-to-b from-[#4FB777]/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              {/* Number */}
+              <span
+                className={`text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-1 relative z-10 group-hover:text-[#4FB777] transition-all duration-300 ${
+                  unit.label === "Seconds" ? "animate-pulse" : ""
+                }`}
+              >
+                {String(unit.value).padStart(2, "0")}
               </span>
-              <span className="text-xs sm:text-sm text-white mt-1 sm:mt-2">
+
+              {/* Label */}
+              <span className="text-xs sm:text-sm text-gray-400 uppercase tracking-wider font-medium relative z-10 group-hover:text-gray-300 transition-colors duration-300">
                 {unit.label}
               </span>
+
+              {/* Animated border */}
+              <div className="absolute inset-0 rounded-xl border-2 border-transparent group-hover:border-[#4FB777]/30 transition-all duration-300"></div>
             </div>
           ))}
         </div>
+
+        {/* Modern accent line */}
+        <div className="mt-6 h-1 bg-gradient-to-r from-transparent via-[#4FB777] to-transparent rounded-full opacity-50"></div>
       </div>
     </div>
   );
-  
 };
 
 export default Timer;

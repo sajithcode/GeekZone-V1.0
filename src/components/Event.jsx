@@ -2,7 +2,7 @@ import React from 'react';
 
 function Event() {
   return (
-    <div className='bg-[#18181C]'>
+    <section id='events' className='bg-[#18181C]'>
     <div className="  px-4 py-8 mx-auto max-w-7xl font-primary">
       {/* Header Section */}
       <div className="text-center sm:text-left mb-8">
@@ -37,7 +37,7 @@ function Event() {
         </div>
       </div>
     </div>
-    </div>
+    </section>
   );
 }
 
